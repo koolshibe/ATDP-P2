@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 session_start();
@@ -36,44 +35,4 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     <head>
         Redirect failed.<a href="game.php">dashboard</a>
     </head>
-=======
-<?php
-
-session_start();
-require_once "config.php";
-try {
-    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-} catch (PDOException $e) {
-    echo "<p>Error: {$e->getMessage()}</p>";
-}
-
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-    $sth = $dbh -> prepare("SELECT * FROM customers WHERE username=:uname");
-    $sth -> bindValue(":uname", $_POST["username"]);
-    $sth -> execute();
-    $pass = $sth -> fetch();
-    if ($pass && password_verify($_POST["password"], $pass["pass_hash"])) {
-        $_SESSION["sid"] = $pass["id"];
-        $_SESSION["games"] = array();
-        header("Location:game.php");
-    } else {
-        header('Location:signin.php?msg="Signin failed. Check your username and password.');
-    }
-} else if (isset($_SESSION["sid"])) {
-    if (isset($_GET["redirect"])) {
-        header("Location:".$_GET["redirect"]);
-    } else {
-        header("Location:game.php");
-    }
-} else {
-    header('Location:signin.php?msg="Signin failed."');
-}
-
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        Redirect failed.<a href="game.php">dashboard</a>
-    </head>
->>>>>>> 29b0709 (Made purchasing system)
 </html>
