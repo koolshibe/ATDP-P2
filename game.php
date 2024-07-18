@@ -20,7 +20,13 @@ try {
                 $gameinfo = $sth -> fetch();
                 echo "<h2>".$gameinfo["game_name"]."</h2><h3>".$gameinfo["price"]."</h3>";
             } else {
-                //Ishaan's code here
+                $sth = $dbh->prepare("SELECT * FROM games");
+                $sth->execute();
+                $allGamesView = $sth->fetch();
+                foreach($allGamesView as $all){
+                    echo "<h1>All Games<h1>";
+                    echo "<h2>".$all["game_name"]."</h2><h3>".$all["price"]."</h3><br><br>";
+                }
             }
         ?>
     </body>
