@@ -22,10 +22,10 @@ try {
             } else {
                 $sth = $dbh->prepare("SELECT * FROM games");
                 $sth->execute();
-                $allGamesView = $sth->fetch();
-                foreach($allGamesView as $all){
+                $allGamesView = $sth->fetchAll();
+                foreach($allGamesView as $arr=>$all){
                     echo "<h1>All Games<h1>";
-                    echo "<h2>".$all["game_name"]."</h2><h3>".$all["price"]."</h3><br><br>";
+                    echo '<a href=game.php?gameid=".$all["id"]."><h2>".$all["game_name"]."</h2><br></a>"<h3>".$all["price"]."</h3><br>';
                 }
             }
         ?>
