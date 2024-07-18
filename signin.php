@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Install Chalkboard Manifesto DB</title>
+    <title>Sign In to Better Games</title>
 </head>
 <body>
     <?php
