@@ -1,5 +1,5 @@
 CREATE TABLE customers(
-    id int AUTOINCREMENT,
+    id int AUTO_INCREMENT PRIMARY KEY,
     username varChar(255),
     telephone varChar(10),
     country int,
