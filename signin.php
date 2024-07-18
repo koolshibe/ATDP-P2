@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Sign In to Better Games</title>
+    <title>Sign In to Free Games</title>
 </head>
 <body>
     <?php
