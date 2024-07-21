@@ -2,12 +2,14 @@
 
 session_start();
 require_once "config.php";
+require_once "header.php";
+            addHeader();
 try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 } catch (PDOException $e) {
     echo "<p>Error: {$e->getMessage()}</p>";
 }
-
+echo '<link rel="stylesheet" href="styles.css">';
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $sth = $dbh -> prepare("SELECT * FROM customers WHERE username=:uname");
     $sth -> bindValue(":uname", $_POST["username"]);

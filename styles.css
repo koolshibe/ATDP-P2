@@ -13,10 +13,10 @@ html{
 /* header + nav bar styling */
 #header {
     pointer-events: all;
-    display: inline-flex;
+    display: flex;
     height: 69px;
     align-items: center;
-    position: fixed;
+    position: sticky;
     border-bottom: 1px solid #00c7c6;
     width: 100%;    
     padding: 5px;
@@ -31,7 +31,7 @@ h1{
     color: #fff;
 }
 
-a{
+.headerA{
     text-decoration: none;
 }
 
@@ -48,12 +48,26 @@ nav a {
     margin: 0;
     padding-left: 5px;
     padding-right: 10px;
+}
+
+a{
     text-decoration: underline;
     color: #fff;
 }
 
+input{
+    background-color: #053052; /* Light gray background */
+    border: 1px solid #ccc; /* Optional: border to make the input field more visible */
+    padding: 10px; /* Optional: padding for better spacing inside the input field */
+    border-radius: 4px; /* Optional: rounded corners */
+}
 
 /*indent*/
-main{
-    margin-top: 100px;
+#display-text {
+    width: 80%;
+    max-width: 600px;
+}
+
+#worse{
+    text-decoration: line-through;
 }

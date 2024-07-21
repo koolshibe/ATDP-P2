@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Free Games</title>
-        <link rel="stylesheet" href="styles.css">   
-    </head>
-    <body>
-        <div id="header">
-        <a href="index.php"><h1>Free Games</h1></a>
-            <nav>
-                <a href="signin.php">Sign In</a>
-                <a href="create.php">Sign Up</a>
-                <a href="checkout.php">Checkout</a>
-            </nav>
-        <div>
-    </body>
+<head>
+    <title>Free Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <?php require_once "header.php"; addHeader();?>
+    <div id="display-text">
+        <h2>Buy games at better prices</h2>
+        <p>Unlike others, Free Games gives you what you want for nothing, as it will only <span id="worse">worsen</span> improve your life!</p>
+    </div>
+</body>
 </html>

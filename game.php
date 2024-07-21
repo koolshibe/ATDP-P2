@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once "config.php";
+require_once "header.php";
+addHeader();
 try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 } catch (PDOException $e) {
@@ -10,6 +12,7 @@ try {
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <?php
@@ -23,9 +26,9 @@ try {
                 $sth = $dbh->prepare("SELECT * FROM games");
                 $sth->execute();
                 $allGamesView = $sth->fetchAll();
-                foreach($allGamesView as $arr=>$all){
-                    echo "<h1>All Games<h1>";
-                    echo '<a href=game.php?gameid=".$all["id"]."><h2>".$all["game_name"]."</h2><br></a>"<h3>".$all["price"]."</h3><br>';
+                echo "<h1>All Games<h1>";
+                foreach($allGamesView as $all){
+                    echo "<a href=game.php?gameid=". $all["id"]."><h2>".$all["game_name"]."</h2><br></a><h3>Price:<br>".$all["price"]."</h3><br>";
                 }
             }
         ?>

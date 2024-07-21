@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <?php require_once "header.php"; addHeader(); ?>
         <form action="accountcreator.php" method="post">
             <input type="text" name="username" placeholder="username" required/>
             <input type="text" name="telephone" placeholder="telephone" required/>
