@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="script.js"></script></head>
+    <body></body>
+</html>
+
+
+
 <?php
 session_start();
 // Unset all of the session variables.

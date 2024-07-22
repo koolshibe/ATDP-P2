@@ -3,6 +3,7 @@
 <head>
     <title>Free Games</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <?php require_once "header.php"; addHeader();?>

@@ -13,6 +13,7 @@ try {
     <head>
         <title>Shop | Better Games</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <?php
@@ -40,5 +41,4 @@ try {
             }
         ?>
     </body>
-    <script src="script.js"></script>
 </html>
