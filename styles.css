@@ -20,7 +20,7 @@ html{
     border-bottom: 1px solid #00c7c6;
     width: 100%;    
     padding: 5px;
-    z-index: 5;
+    z-index: 150565;
     left: 0;
     top: 0;
 }
@@ -29,10 +29,6 @@ h1{
     font-family: 'Zilla Slab';
     padding-left: 10px;
     color: #fff;
-}
-
-.headerA{
-    text-decoration: none;
 }
 
 h2{
@@ -55,17 +51,27 @@ a{
     color: #fff;
 }
 
+a + h1{
+    text-decoration: none;
+}
+
 input{
-    background-color: #053052; /* Light gray background */
-    border: 1px solid #ccc; /* Optional: border to make the input field more visible */
-    padding: 10px; /* Optional: padding for better spacing inside the input field */
-    border-radius: 4px; /* Optional: rounded corners */
+    background-color: #053052; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    border-radius: 4px; 
+}
+
+button{
+    background-color: #053052; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 4px; 
 }
 
 /*indent*/
 #display-text {
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
 }
 
 #worse{

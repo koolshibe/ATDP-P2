@@ -2,7 +2,7 @@
 
 function addHeader(){
     echo '<div id="header">
-        <h1>Free Games</h1>
+        <a href="index.php"><h1>Free Games</h1></a>
         <nav>
             <a href="game.php">Shop</a>
             <a href="signin.php">Sign In</a>
