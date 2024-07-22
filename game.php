@@ -11,6 +11,7 @@ try {
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Shop | Better Games</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
