@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Sign In to Free Games</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <?php

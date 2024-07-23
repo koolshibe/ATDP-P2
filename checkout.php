@@ -2,9 +2,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
     </head>
     <body>
-        <?php require_once "header.php"; addHeader(); ?>
+    <?php require_once "header.php" addHeader(); ?>
     <form method="post" action="purchase.php">
         <?php
 
