@@ -7,7 +7,6 @@
 
 
 <?php
-session_start();
 // Unset all of the session variables.
 $_SESSION = array();
 require_once "header.php";

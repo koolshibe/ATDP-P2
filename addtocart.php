@@ -1,5 +1,4 @@
 <?php
-session_start();
 echo '<link rel="stylesheet" href="styles.css">';
 require_once "header.php";
 ?>

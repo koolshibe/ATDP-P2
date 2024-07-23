@@ -9,8 +9,6 @@
     <form method="post" action="purchase.php">
         <?php
 
-            session_start();
-
             require_once "config.php";
             try {
                 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
