@@ -15,9 +15,15 @@
             } catch (PDOException $e) {
                 echo "<p>Error: {$e->getMessage()}</p>";
             }
-            $sth = $dbh -> prepare("SELECT * FROM games WHERE id IN (".implode(", ",$_SESSION["games"]).")");
-            $sth -> execute();
-            $purchases = $sth -> fetchAll();
+            $purchases= array();
+
+            foreach ($_SESSION["games"] as $g) {
+                $sth = $dbh -> prepare("SELECT * FROM games WHERE id=:game");
+                $sth -> bindValue(":game", $g);
+                $sth -> execute();
+                array_push($sth -> fetch());
+            }
+
 
             foreach ($purchases as $p) {
                 echo "<h2>".$p["game_name"]."</h2><br>";
