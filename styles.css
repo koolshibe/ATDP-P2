@@ -8,6 +8,7 @@ html{
     background-color: #04243d;
     color: #fff;
     text-align: center;
+    cursor: none;
 }
 
 /* header + nav bar styling */
@@ -49,6 +50,7 @@ nav a {
 a{
     text-decoration: underline;
     color: #fff;
+    cursor: none;
 }
 
 a + h1{
@@ -83,7 +85,7 @@ button{
     position: absolute;
     width: 5px;
     height: 5px;
-    background-color: #ff00f2;
+    background-color: #fffb00;
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
