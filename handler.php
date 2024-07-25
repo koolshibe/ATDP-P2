@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="script.js"></script>
 <?php
 require_once "config.php";
 require_once "header.php";
@@ -33,10 +37,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) { //if the user has 
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        Redirect failed.<a href="game.php">dashboard</a>
-        <script src="script.js"></script>
+
+    Redirect failed.<a href="game.php">dashboard</a>
     </head>
 </html>

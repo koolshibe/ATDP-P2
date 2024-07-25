@@ -25,6 +25,10 @@ if (isset($_POST["admin_username"]) && isset($_POST["admin_password"])) { //if t
 ?>
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="script.js"></script>
+    </head>
     <form action="query.php" method="post">
         <input type="text" name="query"/>
         <input type="submit" value="query"/>

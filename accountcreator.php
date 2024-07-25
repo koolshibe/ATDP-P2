@@ -17,8 +17,8 @@ try {
 }
 
 echo '<link rel="stylesheet" href="styles.css">';
-if (isset($_POST["password"]) && isset($_POST["username"]) && isset($_POST["country"]) && isset($_POST["telephone"])) { //if the creation form has been filled
-    $sth = $dbh-> prepare("INSERT INTO customers (username, country, telephone, pass_hash) VALUES (:uname, :country, :tphone, :phash);"); //set al values equal to the following vars
+if (isset($_POST["password"]) && isset($_POST["username"]) && isset($_POST["country"]) && isset($_POST["telephone"]) && filter_var($_POST['telephone'], FILTER_VALIDATE_INT)) { //if the creation form has been filled
+    $sth = $dbh-> prepare("INSERT INTO customers (username, country, telephone, pass_hash) VALUES (:uname, :country, :tphone, :phash);"); //set all values equal to the following vars
     $sth -> bindValue(":uname", $_POST["username"]);
     $sth -> bindValue(":country", intval($_POST["country"]));
     $sth -> bindValue(":tphone", $_POST["telephone"]);
@@ -26,6 +26,6 @@ if (isset($_POST["password"]) && isset($_POST["username"]) && isset($_POST["coun
     $sth -> execute();
     header("Location:signin.php"); //redirect user to signin webpage
 } else {
-    header("Location:create.php"); //if the user hasnt made an account, redirect them to acc creation
+    header("Location:create.php"); //if the user hasnt made an account, redirect them to acc creation  
 }
 ?>
