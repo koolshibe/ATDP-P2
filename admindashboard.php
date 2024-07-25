@@ -25,13 +25,36 @@ if (isset($_POST["admin_username"]) && isset($_POST["admin_password"])) {
 ?>
 <!DOCTYPE html>
 <html>
-    <form action="query.php" method="post">
-        <input type="text" name="query"/>
+    <form action="query.php?table=stores" method="post">
+        <input type="text" name="id"/>
+        <input type="text" name="store_name"/>
+        <input type="text" name="telephone"/>
+        <input type="text" name="country"/>
+        <input type="text" name="whereabouts"/>
+        <input type="text" name="msg"/>
         <input type="submit" value="query"/>
     </form>
-    <form action="admincreator.php" method="post">
+    <form action="query.php?table=games" method="post">
+        <input type="text" name="id"/>
+        <input type="text" name="game_name"/>
+        <input type="text" name="price"/>
+        <input type="text" name="img"/>
+        <input type="text" name="msg"/>
+        <input type="submit" value="query"/>
+    </form>
+    <form action="query.php?table=purchases" method="post">
+        <input type="text" name="id"/>
+        <input type="text" name="game_id"/>
+        <input type="text" name="customer_id"/>
+        <input type="text" name="store_id"/>
+        <input type="text" name="msg"/>
+        <input type="submit" value="query"/>
+    </form>
+    <form action="query.php?table=administrators" method="post">
+        <input type="text" name="id"/>
         <input type="text" name="username"/>
-        <input type="text" name="password">
-        <input type="submit" value="create"/>
+        <input type="text" name="password"/>
+        <input type="text" name="msg"/>
+        <input type="submit" value="query"/>
     </form>
 </html>

@@ -10,12 +10,13 @@
         <?php
 
             require_once "config.php";
+
             try {
                 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             } catch (PDOException $e) {
                 echo "<p>Error: {$e->getMessage()}</p>";
             }
-            // session_start();
+            session_start();
             $_SESSION["purchases"] = array();
 
             $purchases= array();
@@ -31,18 +32,20 @@
         
         
                     foreach ($purchases as $p) {
-                        echo "<h2>".$p["game_name"]."</h2><br>";
-                        $sth = $dbh -> prepare("SELECT stores.store_name, stores.id, purchases.id FROM stores JOIN purchases ON purchases.store_id=stores.id AND purchases.game_id=:games AND purchases.customer_id IS NULL");
-                        $sth -> bindValue(":games", $p["id"]);
-                        $sth -> execute();
-                        $stores = $sth -> fetchAll();
-        
-                        echo "<select name='".$p["id"]."' required>";
-                        foreach ($stores as $s) {
-                            echo "<option value=".$s[1].">".$s[0]."</option>";
-                            array_push($_SESSION["purchases"], $s[2]);
+                        if ($p) {
+                            echo "<h2>".$p["game_name"]."</h2><br>";
+                            $sth = $dbh -> prepare("SELECT stores.store_name, stores.id, min(purchases.id) FROM stores JOIN purchases ON purchases.store_id=stores.id AND purchases.game_id=:games AND purchases.customer_id IS NULL GROUP BY stores.store_name, stores.id");
+                            $sth -> bindValue(":games", $p["id"]);
+                            $sth -> execute();
+                            $stores = $sth -> fetchAll();
+            
+                            echo "<select name='".$p["id"]."' required>";
+                            foreach ($stores as $s) {
+                                echo "<option value=".$s[1].">".$s[0]."</option>";
+                                array_push($_SESSION["purchases"], $s[2]);
+                            }
+                            echo "</select>";
                         }
-                        echo "</select>";
                     }
                     $_SESSION["games"] = $_SESSION["purchases"];
                 } elseif($_SESSION["games"] == []) {

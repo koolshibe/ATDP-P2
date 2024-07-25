@@ -17,7 +17,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $_SESSION["sid"] = $pass["id"];
         header("Location:game.php");
     } else {
-        header("refresh:5;url=signin.php");
+        header("Location:signin.php");
                 echo 'You\'ll be redirected in about 5 secs, as you\'re username/password is wrong. To bypass the delay, click <a href="signin.php">here</a>.';
                 exit;
     }

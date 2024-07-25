@@ -17,4 +17,5 @@ CREATE TABLE purchases(
 INSERT INTO purchases (game_id, customer_id, store_id) VALUES 
 (1, NULL, 2),
 (2, NULL, 2),
-(1, NULL, 2);
+(1, NULL, 2),
+(1, NULL, 1);

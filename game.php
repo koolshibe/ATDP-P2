@@ -18,6 +18,7 @@ try {
 <body>
     <?php
         addHeader();
+        session_start();
 
         if (!isset($_SESSION["games"])) {
             $_SESSION["games"]= array();
