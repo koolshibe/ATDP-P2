@@ -13,7 +13,7 @@
         echo $_GET["msg"];
     }
     ?>
-    <form action="handler.php" method="post">
+    <form action="handler.php" method="post"> <!-- basic sign in form-->
         <br><br>
         <input type="text" name="username" required></input>
         <input type="password" name="password" required></input>

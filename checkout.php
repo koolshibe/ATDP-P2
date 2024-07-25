@@ -20,10 +20,10 @@
             $_SESSION["purchases"] = array();
 
             $purchases= array();
-
-            if(isset($_SESSION['sid'])){
-                if(isset($_SESSION["games"])){
-                    foreach ($_SESSION["games"] as $g) {
+            
+            if(isset($_SESSION['sid'])){ //checking if the user exists
+                if(isset($_SESSION["games"])){ //if the games array is there
+                    foreach ($_SESSION["games"] as $g) { //getting the game info
                         $sth = $dbh -> prepare("SELECT * FROM games WHERE id=:game");
                         $sth -> bindValue(":game", $g);
                         $sth -> execute();
@@ -31,7 +31,7 @@
                     }
         
         
-                    foreach ($purchases as $p) {
+                    foreach ($purchases as $p) {//echoing out info about purchasing game
                         if ($p) {
                             echo "<h2>".$p["game_name"]."</h2><br>";
                             $sth = $dbh -> prepare("SELECT stores.store_name, stores.id, min(purchases.id) FROM stores JOIN purchases ON purchases.store_id=stores.id AND purchases.game_id=:games AND purchases.customer_id IS NULL GROUP BY stores.store_name, stores.id");
@@ -47,17 +47,17 @@
                             echo "</select>";
                         }
                     }
-                    $_SESSION["games"] = $_SESSION["purchases"];
-                } elseif($_SESSION["games"] == []) {
+                    $_SESSION["games"] = $_SESSION["purchases"]; //setting game and purchase equak
+                } elseif($_SESSION["games"] == []) { //if games is empty, redirect to shop
                     header("refresh:5;url=game.php");
                     echo 'You\'ll be redirected in about 5 secs, as you need to choose a game to buy. To bypass the delay, click <a href="game.php">here</a>.';
                     exit;
-                } else {
+                } else { //if nothing else is met, go back to shop
                     header("refresh:5;url=game.php");
                     echo 'You\'ll be redirected in about 5 secs, as you need to choose a game to buy. To bypass the delay, click <a href="game.php">here</a>.';
                     exit;
-                }
-            } else{
+                } 
+            } else{ //if user is not logged in, redirect to login
                 header("refresh:5;url=signin.php");
                 echo 'You\'ll be redirected in about 5 secs, as you need to login. To bypass the delay, click <a href="signin.php">here</a>.';
                 exit;
