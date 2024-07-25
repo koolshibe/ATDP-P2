@@ -7,19 +7,19 @@ try {
 } catch (PDOException $e) {
     echo "<p>Error: {$e->getMessage()}</p>";
 }
-if (isset($_POST["admin_username"]) && isset($_POST["admin_password"])) {
+if (isset($_POST["admin_username"]) && isset($_POST["admin_password"])) { //if the admin user has signed in
     $sth = $dbh -> prepare("SELECT * FROM administrators WHERE username=:uname");
     $sth -> bindValue(":uname", $_POST["admin_username"]);
     $sth -> execute();
     $info = $sth -> fetch();
-    if (!($info && password_verify($_POST["admin_password"], $info["pass_hash"]))) {
+    if (!($info && password_verify($_POST["admin_password"], $info["pass_hash"]))) { //if password is wrong, redirect to sign in
         header("Location:adminsign.php");
         die();
     } else {
-        $_SESSION["aid"] = $info["id"];
+        $_SESSION["aid"] = $info["id"]; //if not, set aid to id
     }
 } else {
-    header("Location:adminsign.php");
+    header("Location:adminsign.php"); //if the admin(or hacker) hasnt added credentials, redirect to signin
     die();
 }
 ?>

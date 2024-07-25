@@ -9,11 +9,11 @@ require_once "header.php";
 </html>
 
 <?php
-if (isset($_GET["gameid"])) {
-    array_push($_SESSION["games"], (int)$_GET["gameid"]);
-    header("Location:game.php");
+if (isset($_GET["gameid"])) { //if they have selected a game
+    array_push($_SESSION["games"], (int)$_GET["gameid"]); //add the game id to session games
+    header("Location:game.php"); //redirect back to game.php
 } else {
-    header("Location:game.php");
+    header("Location:game.php"); //else, redirect back to game.php
 }
 
 ?>

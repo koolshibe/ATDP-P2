@@ -7,9 +7,9 @@
     <body>
         <?php require_once "header.php"; addHeader(); ?>
         <form action="accountcreator.php" method="post">
-            <input type="text" name="username" placeholder="username" required/>
-            <input type="number" name="telephone" placeholder="telephone" minlength="10" maxlength="10"required/>
-            <select name="country" required>
+            <input type="text" name="username" placeholder="username" required/> <!--Create username -->
+            <input type="number" name="telephone" placeholder="telephone" minlength="10" maxlength="10"required/><!--Add telephone no. -->
+            <select name="country" required> <!-- Select country-->
                 <option value="">phone</option>
                 <option value="93">Afghanistan +93</option>
                 <option value="358">Aland Islands +358</option>
@@ -263,7 +263,7 @@
                 <option value="260">Zambia +260</option>
                 <option value="263">Zimbabwe +263</option>
             </select>
-            <input type="text" name="password" placeholder="password" required/>
+            <input type="text" name="password" placeholder="password" required/> <!-- Create password-->
             <input type="submit"/>
         </form>
     </body>

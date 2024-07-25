@@ -1,7 +1,6 @@
 <?php 
 session_start();
-// will also have div for sparkles 
-function addHeader(){
+function addHeader(){ //creat a header function, echoing out name+links depending on sign in state
     echo '<div id="header">
         <a href="index.php"><h1>Free Games</h1></a>
         <nav>
@@ -14,7 +13,6 @@ function addHeader(){
             }
         echo '<a href="checkout.php">Checkout</a>
         </nav>
-    </div>
-    <div id="sparkle-container"></div>';
+    </div>';
 }
 ?>

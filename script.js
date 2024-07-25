@@ -2,13 +2,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const checkoutButton = document.getElementById('addToCart');
 
-    if (checkoutButton) {
+    if (checkoutButton) { //alert for when a user adds to cart
         checkoutButton.onclick = () => {
             alert('Item added to cart!');
         }
     }
 
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function(e) { //SPARKLES!
         const sparkle = document.createElement('div');
         sparkle.className = 'sparkle';
         document.body.appendChild(sparkle);

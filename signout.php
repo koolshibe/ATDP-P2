@@ -4,7 +4,7 @@
     <body></body>
 </html>
 
-
+<!--DEVS LOVELY CODE!!!->
 
 <?php
 // Unset all of the session variables.
