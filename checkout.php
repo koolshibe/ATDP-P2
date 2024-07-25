@@ -15,7 +15,7 @@
             } catch (PDOException $e) {
                 echo "<p>Error: {$e->getMessage()}</p>";
             }
-            $purchases= array();
+            $purchases= $_POST['productid'];
 
             if(isset($_SESSION["games"])){
                 foreach ($_SESSION["games"] as $g) {

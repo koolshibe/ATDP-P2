@@ -53,22 +53,20 @@ a{
     cursor: none;
 }
 
-a + h1{
-    text-decoration: none;
-}
-
 input{
     background-color: #053052; 
     border: 1px solid #ccc; 
     padding: 10px; 
     border-radius: 4px; 
+    color: #fff;
 }
 
 button{
     background-color: #053052; 
-    color: white; 
+    border: 1px solid #ccc; 
     padding: 10px; 
     border-radius: 4px; 
+    color: #fff;
 }
 
 /*indent*/
