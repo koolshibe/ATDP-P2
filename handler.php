@@ -17,7 +17,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $_SESSION["sid"] = $pass["id"];
         header("Location:game.php");
     } else {
-        header('Location:signin.phpmsg="Signin failed. Check your username and password.');
+        header("refresh:5;url=signin.php");
+                echo 'You\'ll be redirected in about 5 secs, as you\'re username/password is wrong. To bypass the delay, click <a href="signin.php">here</a>.';
+                exit;
     }
 } else if (isset($_SESSION["sid"])) {
     if (isset($_GET["redirect"])) {
@@ -34,5 +36,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 <html>
     <head>
         Redirect failed.<a href="game.php">dashboard</a>
+        <script src="script.js"></script>
     </head>
 </html>

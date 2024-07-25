@@ -18,12 +18,12 @@ try {
 <body>
     <?php
         addHeader();
-        session_start();
 
         if (!isset($_SESSION["games"])) {
             $_SESSION["games"]= array();
         }
-        echo $_SESSION["sid"];
+
+        
         if(isset($_SESSION['sid'])){
             if (isset($_GET["gameid"])) {
                 $sth = $dbh->prepare("SELECT * FROM games WHERE id=:gameid");

@@ -8,7 +8,7 @@
         <?php require_once "header.php"; addHeader(); ?>
         <form action="accountcreator.php" method="post">
             <input type="text" name="username" placeholder="username" required/>
-            <input type="text" name="telephone" placeholder="telephone" required/>
+            <input type="number" name="telephone" placeholder="telephone" minlength="10" maxlength="10"required/>
             <select name="country" required>
                 <option value="">phone</option>
                 <option value="93">Afghanistan +93</option>
