@@ -15,6 +15,7 @@
             } catch (PDOException $e) {
                 echo "<p>Error: {$e->getMessage()}</p>";
             }
+
             $purchases= $_POST['productid'];
 
             if(isset($_SESSION["games"])){

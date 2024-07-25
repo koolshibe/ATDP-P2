@@ -37,8 +37,8 @@ try {
                 $sth->execute();
                 $gameinfo = $sth->fetch();
                 echo "<h2>".$gameinfo["game_name"]."</h2><h3>".$gameinfo["price"]."</h3>";
-                if (isset($all["img"])) {
-                    echo "<img src='" . $all["img"] . "' width='200' height='200' /><br>";
+                if (isset($gameinfo["img"])) {
+                    echo "<img src='" . $gameinfo["img"] . "' width='200' height='200' /><br>";
                 } else {
                     echo "<img src='https://m.media-amazon.com/images/I/71fccwYLGoL._AC_UF894,1000_QL80_.jpg' width='200' height='200'/><br>";
                 }
