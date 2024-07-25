@@ -19,7 +19,7 @@
 
             $purchases= array();
             
-            if(isset($_SESSION['sid'])){ //checking if the user logged in
+            if(isset($_SESSION['sid'])){ //checking if the user exists
                 if(isset($_SESSION["games"])){ //if the games array is there
                     foreach ($_SESSION["games"] as $g) { //getting the game info
                         $sth = $dbh -> prepare("SELECT * FROM games WHERE id=:game");
@@ -29,7 +29,7 @@
                     }
         
         
-                    foreach ($purchases as $p) { //echoing out all info about purchasing game
+                    foreach ($purchases as $p) { //echoing out info about purchasing game
                         echo "<h2>".$p["game_name"]."</h2><br>";
                         $sth = $dbh -> prepare("SELECT stores.store_name, stores.id, purchases.id FROM stores JOIN purchases ON purchases.store_id=stores.id AND purchases.game_id=:games AND purchases.customer_id IS NULL");
                         $sth -> bindValue(":games", $p["id"]);
