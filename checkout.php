@@ -46,7 +46,7 @@
                 $_SESSION["games"] = $_SESSION["purchases"];
             } else{
                 header("refresh:5;url=game.php");
-                echo 'You\'ll be redirected in about 5 secs, as you haven\'t chosen a game to buy. To bypass the delay, click <a href="game.php">here</a>.';
+                echo 'You\'ll be redirected in about 5 secs, as you need to choose a game to buy. To bypass the delay, click <a href="game.php">here</a>.';
                 exit;
             }
 
