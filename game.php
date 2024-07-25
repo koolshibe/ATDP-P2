@@ -14,22 +14,16 @@ try {
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("form").submit(function(event){
-                event.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: $(this).attr('action'),
-                    data: $(this).serialize()
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <?php
         addHeader();
+        session_start();
+
+        if (!isset($_SESSION["games"])) {
+            $_SESSION["games"]= array();
+        }
+        echo $_SESSION["sid"];
         if(isset($_SESSION['sid'])){
             if (isset($_GET["gameid"])) {
                 $sth = $dbh->prepare("SELECT * FROM games WHERE id=:gameid");
@@ -42,8 +36,7 @@ try {
                 } else {
                     echo "<img src='https://m.media-amazon.com/images/I/71fccwYLGoL._AC_UF894,1000_QL80_.jpg' width='200' height='200'/><br>";
                 }
-                echo "<form method='post' action='checkout.php'>
-                        <input type='hidden' name='productid' value='" . $_GET['gameid'] . "' />
+                echo "<form method='post' action='addtocart.php?gameid=". $_GET['gameid'] ."'>
                         <input type='submit' name='addToCart' value='Add to Cart!' id='addToCart'>
                       </form>
                       <br>
