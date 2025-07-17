@@ -83,9 +83,6 @@ if (isset($_GET["table"])) {
             $sth -> execute();
         }
     }
-    $sth = $dbh -> prepare("INSERT INTO updates (admin_id, changelog) VALUES (:aid, :msg)"); 
-    $sth -> bindValue(":aid", $_SESSION["aid"]);
-    $sth -> bindValue(":msg", $_POST["msg"]);
 } else {
     header("Location:admindashboard.php");
 }
